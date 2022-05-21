@@ -79,7 +79,7 @@ body {
   /* ___________________________________________________________ */
   img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
   }
   
   .image {
@@ -92,6 +92,7 @@ body {
 } */
 #display div{
     width: 30%;
+    height: 40%;
     padding-left: 1%;
     padding-right: 1%;
     padding-bottom: 1%;
