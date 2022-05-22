@@ -89,3 +89,14 @@ body {
   .image {
     margin: auto 20px;
   }
+
+  @media (max-width: 700px) { 
+    #display img{
+        max-width: 100%;
+        /* max-height: auto; */
+        margin: 0 auto;
+        margin-top: 1%;
+        /* border: 1px solid black; */
+    }
+
+   }

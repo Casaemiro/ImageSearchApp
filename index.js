@@ -18,7 +18,7 @@ function submit(event){
 }
 function loadImg(){
     removeImages();
-    const url = 'https://api.unsplash.com/search/photos?query='+newInput.value+'&per_page=9&client_id=SF70ZK36aVoMRCrGlSO6tDxwwNY1fg3oX0Tq3uiTh9o';
+    const url = 'https://api.unsplash.com/search/photos?query='+newInput.value+'&per_page=6&client_id=SF70ZK36aVoMRCrGlSO6tDxwwNY1fg3oX0Tq3uiTh9o';
     fetch(url)
     .then(response => {
         if(response.ok){
