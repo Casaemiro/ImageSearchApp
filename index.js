@@ -31,19 +31,20 @@ function loadImg(){
         const imageNode = [];
         console.log("wow")
         console.log(data)
-        for(let i = 0;i < data.results.length; i++){
-            imageNode[i] = document.createElement('div');
-            imageNode[i].className = "img";
-            imageNode[i].style.backgroundImage = 'url('+data.results[i].urls.regular +')';
+        for(let i = 0;i < data.results.length; i++){ 
+            // imageNode[i] = document.createElement('div');
+            // imageNode[i].className = "img";
+            // imageNode[i].style.backgroundImage = 'url('+data.results[i].urls.regular +')';
             console.log(data.results[i].urls.regular)
-            display.innerHTML += "<div><img src="+ data.results[i].urls.regular +" /></div>"
-            imageNode[i].addEventListener('dblclick',function(){
-                window.open(data.results[i].links.download, '_blank')
+            display.innerHTML += "<img src="+ data.results[i].urls.regular +" />"
+            // imageNode[i].addEventListener('dblclick',function(){
+            //     window.open(data.results[i].links.download, '_blank')
                 
-            })
+            // })
             console.log("wowo")
-            display.appendChild(imageNode[i]);
-        }console.log(imageNode)
+            // display.appendChild(imageNode[i]);
+        }
+        // console.log(imageNode)
     }
 
     )
