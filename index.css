@@ -7,8 +7,6 @@ body {
     font-family: 'Exo 2', sans-serif;
 }
 #top-bar {
-    /* width: 100%; */
-    /* background-color: green; */
     display: flex;
     padding: 1rem;
     font-size: 2rem;
@@ -18,8 +16,6 @@ body {
     width:40px;
 }
 #formsection {
-    /* display: flex; */
-    /* background-color: red; */
     padding: 1%;
 }
 #formsection label {
@@ -50,12 +46,8 @@ body {
     background-color: grey;
     border: 1px solid black;
 }
-#display {
-    /* width: 100%; */
-    /* background-color: grey; */
-    /* height: 100vh; */
+/* #display {
     margin-top: 1%;
-    /* padding-top: 1%; */
     display: flex; 
     padding-left: 2%;
     padding-right: 2%;
@@ -66,19 +58,24 @@ body {
 }
 #display img{
     max-width: 32%;
-    /* max-height: auto; */
     margin: 0 auto;
     margin-top: 1%;
+} */
+#display {
+    columns:15rem 5;
+    
+}
+#display img{
+    width: 100%;
+    margin-bottom: 1rem;
+    transition-duration: 0.4s;
+}
+#display img:hover{
+    transform: scale(1.01);
+    box-shadow:black 15 15 0 12 ;
+
 }
 /* ____________________________________________________________ */
-.loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
   
   @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -90,13 +87,19 @@ body {
     margin: auto 20px;
   }
 
-  @media (max-width: 700px) { 
+  /* @media (max-width: 700px) { 
     #display img{
         max-width: 100%;
-        /* max-height: auto; */
         margin: 0 auto;
         margin-top: 1%;
-        /* border: 1px solid black; */
-    }
+    } */
 
+   /* } */
+   #loader {
+       background: #000 url(index.gif) no-repeat center center;
+       height: 50vh;
+       width: 100%;
+       /* position: fixed; */
+       z-index:100;
+       background-size: 20%;
    }

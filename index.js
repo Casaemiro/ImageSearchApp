@@ -1,24 +1,23 @@
 
-const input = document.getElementById("search-bar-id");
 const display = document.getElementsByClassName("grid")[0];
-const inputbtn = document.getElementById("formsection");
-console.log(inputbtn);
-inputbtn.addEventListener('submit', submit)
-// inputbtn.addEventListener('click',function(event){
-//     if (event.key == 'Enter')
-//     loadImg();
-// })
-const newInput = document.getElementById("searchbarid");
-console.log(newInput);
+const submitBtn = document.getElementById("formsection");
+console.log(submitBtn);
+// handling the search event
+submitBtn.addEventListener('submit', submit)
+const searchInput = document.getElementById("searchbarid");
+// console.log(searchInput);
 function submit(event){
-    event.preventDefault();
+  
+    event.preventDefault();//
     
-    console.log(newInput)
-    loadImg();
+    loadImg();//call function to load images
+    
 }
+
+//the function below queries the API and returns the images searched
 function loadImg(){
-    removeImages();
-    const url = 'https://api.unsplash.com/search/photos?query='+newInput.value+'&per_page=6&client_id=SF70ZK36aVoMRCrGlSO6tDxwwNY1fg3oX0Tq3uiTh9o';
+    removeImages();//clears the image display each time a new search is initiated
+    const url = 'https://api.unsplash.com/search/photos?query='+searchInput.value+'&per_page=20&client_id=SF70ZK36aVoMRCrGlSO6tDxwwNY1fg3oX0Tq3uiTh9o';
     fetch(url)
     .then(response => {
         if(response.ok){
@@ -28,27 +27,19 @@ function loadImg(){
         }
     })
     .then(data =>{
-        const imageNode = [];
-        console.log("wow")
+        // const imageNode = [];
         console.log(data)
+  
         for(let i = 0;i < data.results.length; i++){ 
-            // imageNode[i] = document.createElement('div');
-            // imageNode[i].className = "img";
-            // imageNode[i].style.backgroundImage = 'url('+data.results[i].urls.regular +')';
-            console.log(data.results[i].urls.regular)
+            
             display.innerHTML += "<img src="+ data.results[i].urls.regular +" />"
-            // imageNode[i].addEventListener('dblclick',function(){
-            //     window.open(data.results[i].links.download, '_blank')
-                
-            // })
-            console.log("wowo")
-            // display.appendChild(imageNode[i]);
         }
-        // console.log(imageNode)
+        let loader = document.getElementById("loader");
+        loader.style.display = "none";
     }
 
     )
 }
 function removeImages(){
-    display.innerHTML='';
+    display.innerHTML='';//when called, replaces the display with an empty string rendering it empty.
 }
