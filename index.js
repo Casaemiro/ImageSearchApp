@@ -32,7 +32,7 @@ function loadImg(){
   
         for(let i = 0;i < data.results.length; i++){ 
             
-            display.innerHTML += "<img src="+ data.results[i].urls.regular +" />"
+            display.innerHTML += "<img src="+ data.results[i].urls.regular + "/>"
         }
         let loader = document.getElementById("loader");
         loader.style.display = "none";
